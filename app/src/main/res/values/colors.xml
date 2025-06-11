@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="orange">#FFA500</color>
+    <!-- Основные цвета для спортивного приложения -->
+    <color name="primary_color">#FF5722</color> <!-- Оранжевый спортивный -->
+    <color name="primary_dark">#E64A19</color>
+    <color name="primary_light">#FFAB91</color>
+
+    <!-- Акцентные цвета -->
+    <color name="accent_color">#4CAF50</color> <!-- Зеленый успех -->
+    <color name="secondary_color">#2196F3</color> <!-- Синий информация -->
+
+    <!-- Текстовые цвета -->
+    <color name="primary_text">#212121</color>
+    <color name="hint_text">#BDBDBD</color>
+
+    <!-- Фоновые цвета -->
+    <color name="white">#FFFFFF</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="divider_color">#E0E0E0</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Градиенты для фона -->
+    <color name="gradient_start">#FF6B35</color>
+    <color name="gradient_end">#F7931E</color>
+
+
+
+    <color name="info_background">#E3F2FD</color>
+    <color name="info_color">#2196F3</color>
+    <color name="info_text">#1976D2</color>
+
+    <!-- Градиент для фона -->
+    <color name="background_gradient_start">#F8F9FA</color>
+    <color name="background_gradient_center">#E9ECEF</color>
+    <color name="background_gradient_end">#DEE2E6</color>
+
+    <!-- Прозрачные цвета -->
+    <color name="white_alpha_30">#4DFFFFFF</color>
+    <color name="white_alpha_50">#80FFFFFF</color>
+    <color name="white_alpha_70">#B3FFFFFF</color>
+
+    <color name="text_primary">#212121</color>
+    <color name="primary_color_light">#90CAF9</color>
+
+    <!-- Основные цвета -->
+    <color name="background_color">#F5F5F5</color>
+
+    <!-- Цвета статусов -->
+    <color name="success_color_light">#E8F5E8</color>
+    <color name="error_color_light">#FFEBEE</color>
+    <color name="warning_color_light">#FFF3E0</color>
+    <color name="gray_light">#F0F0F0</color>
+    <color name="light_gray">#E0E0E0</color>
+    <color name ="success_light">#E8F5E9</color>
+
+    <color name="progress_background">#FFE0E0E0</color>
+
+    <color name="notification_unread_bg">#FFF8E1</color> <!-- мягкий жёлто-бежевый фон -->
+
+    <color name="success_color">#4CAF50</color>     <!-- Зелёный -->
+    <color name="error_color">#F44336</color>       <!-- Красный -->
+    <color name="warning_color">#FFC107</color>     <!-- Жёлтый/оранжевый -->
+    <color name="secondary_text">#757575</color>    <!-- Серый -->
+
+</resources>

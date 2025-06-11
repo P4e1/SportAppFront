@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Иконка календаря с отметкой -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7,11h10v2H7v-2zM5,20h14a1,1 0 0 0 1-1v-9H4v9a1,1 0 0 0 1,1zM17,5h-1V3h-2v2H10V3H8v2H7a1,1 0 0 0-1,1v3h14V6a1,1 0 0 0-1-1z" />
+</vector>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background">
+
+        <!-- Main Content -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginBottom="24dp"
+                        android:layout_marginTop="16dp">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginBottom="12dp"
+                            android:src="@drawable/ic_person"
+                            android:contentDescription="Профиль пользователя"
+                            app:tint="@color/primary_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Мой профиль"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_text"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Персональная информация и настройки"
+                            android:textSize="16sp"
+                            android:textColor="@color/secondary_text"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <!-- Content Layout -->
+                    <LinearLayout
+                        android:id="@+id/contentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!-- User Info Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="8dp"
+                            android:backgroundTint="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <!-- Avatar Section -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        app:cardCornerRadius="40dp"
+                                        app:cardElevation="4dp"
+                                        android:layout_marginBottom="12dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/ic_person"
+                                            android:background="@color/primary_color"
+                                            android:padding="20dp"
+                                            app:tint="@color/white"
+                                            android:contentDescription="Аватар пользователя" />
+                                    </androidx.cardview.widget.CardView>
+
+                                    <TextView
+                                        android:id="@+id/tvFullName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="22sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/primary_text"
+                                        android:layout_marginBottom="4dp" />
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:cardCornerRadius="12dp"
+                                        app:cardElevation="2dp"
+                                        android:backgroundTint="@color/primary_color">
+
+                                        <TextView
+                                            android:id="@+id/tvRole"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/white"
+                                            android:paddingHorizontal="12dp"
+                                            android:paddingVertical="6dp" />
+                                    </androidx.cardview.widget.CardView>
+                                </LinearLayout>
+
+                                <!-- Personal Info -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Личные данные"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/primary_text"
+                                        android:layout_marginBottom="12dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:src="@drawable/ic_person"
+                                            app:tint="@color/secondary_text"
+                                            android:layout_marginEnd="12dp"
+                                            android:layout_gravity="center_vertical" />
+
+                                        <TextView
+                                            android:id="@+id/tvUsername"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textSize="16sp"
+                                            android:textColor="@color/primary_text" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:src="@drawable/ic_email"
+                                            app:tint="@color/secondary_text"
+                                            android:layout_marginEnd="12dp"
+                                            android:layout_gravity="center_vertical" />
+
+                                        <TextView
+                                            android:id="@+id/tvEmail"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textSize="16sp"
+                                            android:textColor="@color/primary_text" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:src="@drawable/ic_phone"
+                                            app:tint="@color/secondary_text"
+                                            android:layout_marginEnd="12dp"
+                                            android:layout_gravity="center_vertical" />
+
+                                        <TextView
+                                            android:id="@+id/tvPhone"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textSize="16sp"
+                                            android:textColor="@color/primary_text" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Organizer Card -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardOrganizer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="8dp"
+                            android:backgroundTint="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Информация об организации"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/primary_text"
+                                    android:layout_marginBottom="16dp" />
+
+                                <TextView
+                                    android:id="@+id/tvOrgName"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_business"
+                                    android:drawableTint="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvOrgEmail"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_email"
+                                    android:drawableTint="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvOrgPhone"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_phone"
+                                    android:drawableTint="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvOrgAddress"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_location"
+                                    android:drawableTint="@color/secondary_text" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Participant Card -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardParticipant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="8dp"
+                            android:backgroundTint="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Спортивная информация"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/primary_text"
+                                    android:layout_marginBottom="16dp" />
+
+                                <TextView
+                                    android:id="@+id/tvInstitution"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_school"
+                                    android:drawableTint="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvDateR"
+                                    style="@style/ProfileInfoItem"
+                                    android:drawableStart="@drawable/ic_calendar"
+                                    android:drawableTint="@color/secondary_text" />
+
+                                <!-- Physical Stats -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginBottom="12dp">
+
+                                    <TextView
+                                        android:id="@+id/tvHeight"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/primary_text"
+                                        android:drawableStart="@drawable/ic_height"
+                                        android:drawableTint="@color/secondary_text"
+                                        android:drawablePadding="8dp"
+                                        android:gravity="center_vertical" />
+
+                                    <TextView
+                                        android:id="@+id/tvWeight"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/primary_text"
+                                        android:drawableStart="@drawable/ic_fitness"
+                                        android:drawableTint="@color/secondary_text"
+                                        android:drawablePadding="8dp"
+                                        android:gravity="center_vertical" />
+                                </LinearLayout>
+
+                                <!-- Stats -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvRating"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/primary_text"
+                                        android:drawableStart="@drawable/ic_star"
+                                        android:drawableTint="@color/secondary_text"
+                                        android:drawablePadding="8dp"
+                                        android:gravity="center_vertical" />
+
+                                    <TextView
+                                        android:id="@+id/tvCompetitions"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/primary_text"
+                                        android:drawableStart="@drawable/ic_trophy"
+                                        android:drawableTint="@color/secondary_text"
+                                        android:drawablePadding="8dp"
+                                        android:gravity="center_vertical" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Action Buttons Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="8dp"
+                            android:backgroundTint="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Настройки аккаунта"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/primary_text"
+                                    android:layout_marginBottom="16dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnChangePassword"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Изменить пароль"
+                                    android:textColor="@color/white"
+                                    android:backgroundTint="@color/primary_color"
+                                    app:icon="@drawable/ic_lock"
+                                    app:iconTint="@color/white"
+                                    app:cornerRadius="12dp"
+                                    android:layout_marginBottom="12dp"
+                                    style="@style/Widget.MaterialComponents.Button" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnLogout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Выйти из аккаунта"
+                                    android:textColor="@color/white"
+                                    android:backgroundTint="@color/error_color"
+                                    app:icon="@drawable/ic_logout"
+                                    app:iconTint="@color/white"
+                                    app:cornerRadius="12dp"
+                                    style="@style/Widget.MaterialComponents.Button" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <!-- Empty State -->
+                    <LinearLayout
+                        android:id="@+id/emptyStateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="32dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginBottom="24dp"
+                            android:src="@drawable/ic_person"
+                            android:contentDescription="Ошибка загрузки профиля"
+                            app:tint="@color/secondary_text"
+                            android:alpha="0.5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Не удалось загрузить профиль"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/secondary_text"
+                            android:layout_marginBottom="8dp"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Проверьте подключение к интернету и попробуйте обновить страницу"
+                            android:textSize="16sp"
+                            android:textColor="@color/secondary_text"
+                            android:textAlignment="center"
+                            android:lineSpacingExtra="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- Loading Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/primary_color"
+            android:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,67 @@
+# === Android/IntelliJ/Gradle related ===
+
+*.iml
+.gradle/
+.idea/
+local.properties
+.DS_Store
+/build/
+.cxx/
+*.apk
+*.ap_
+
+# === Kotlin related ===
+*.class
+*.kt~ # backup files
+*.kts~
+
+# === Log & temporary files ===
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
+
+# === Android Studio specific ===
+captures/
+.externalNativeBuild/
+.navigation/
+*.jks
+
+# === OS generated ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+
+# === Jetpack Compose Preview ===
+.idea/preview.compose.xml
+
+# === Sign-in credentials or secret files ===
+*.keystore
+*.jks
+*.pem
+*.key
+*.crt
+
+# === Fastlane and crashlytics ===
+fastlane/report.xml
+fastlane/metadata/android/*
+crashlytics-build.properties
+
+# === Test outputs ===
+test-output/
+outputs/
+
+# === Local config files ===
+*.env
+.env.*
+secrets.properties
+
+# === Misc ===
+*.bak
+*.orig
+*.rej
+*.sublime-workspace

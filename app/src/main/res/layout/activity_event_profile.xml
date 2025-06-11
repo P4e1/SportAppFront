@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Header with Back Button -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_arrow_back"
+                        android:contentDescription="Назад"
+                        app:tint="@color/primary_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Профиль события"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_text" />
+                </RelativeLayout>
+
+                <!-- Event Header Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <!-- Название события и статус -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp">
+
+                            <!-- Event Name - Display only -->
+                            <TextView
+                                android:id="@+id/textEventName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_toStartOf="@+id/statusContainer"
+                                android:layout_marginEnd="12dp"
+                                android:text="Название события"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"
+                                android:maxLines="3"
+                                android:ellipsize="end"
+                                android:lineSpacingExtra="2dp"
+                                android:visibility="visible" />
+
+                            <!-- Event Name - Editable -->
+                            <EditText
+                                android:id="@+id/etEventName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_toStartOf="@+id/statusContainer"
+                                android:layout_marginEnd="12dp"
+                                android:text="Название события"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"
+                                android:maxLines="3"
+                                android:background="@android:color/transparent"
+                                android:enabled="false"
+                                android:inputType="text"
+                                android:hint="Название события"
+                                android:visibility="gone" />
+
+                            <!-- Status Card -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/statusContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="0dp"
+                                android:backgroundTint="@color/success_light">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingVertical="6dp">
+
+                                    <View
+                                        android:id="@+id/statusIndicator"
+                                        android:layout_width="8dp"
+                                        android:layout_height="8dp"
+                                        android:layout_marginEnd="6dp"
+                                        android:background="@drawable/circle_shape"
+                                        android:backgroundTint="@color/success_color" />
+
+                                    <TextView
+                                        android:id="@+id/textEventStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="АКТИВНОЕ"
+                                        android:textSize="11sp"
+                                        android:textColor="@color/success_color"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
+
+                        <!-- Event Description - Display only -->
+                        <TextView
+                            android:id="@+id/textEventDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание события, правила, условия участия и другая важная информация."
+                            android:textSize="16sp"
+                            android:textColor="@color/secondary_text"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="visible" />
+
+                        <!-- Event Description - Editable -->
+                        <EditText
+                            android:id="@+id/etEventDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание события, правила, условия участия и другая важная информация."
+                            android:textSize="16sp"
+                            android:textColor="@color/secondary_text"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:inputType="textMultiLine"
+                            android:hint="Описание события"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Event Details Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Детали события"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_color"
+                            android:layout_marginBottom="16dp" />
+
+                        <!-- Event Type -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_category"
+                                app:tint="@color/primary_color"
+                                android:layout_marginEnd="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Тип соревнования"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/secondary_text" />
+
+                                <!-- Event Type - Editable -->
+                                <EditText
+                                    android:id="@+id/etEventType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Индивидуальный"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:background="@android:color/transparent"
+                                    android:enabled="false"
+                                    android:inputType="text"
+                                    android:hint="Тип соревнования"
+                                    android:visibility="gone" />
+
+                                <!-- Event Type - Display only -->
+                                <TextView
+                                    android:id="@+id/tvEventType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Индивидуальный"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Category -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_people"
+                                app:tint="@color/primary_color"
+                                android:layout_marginEnd="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Категория участников"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/secondary_text" />
+
+                                <!-- Event Category - Editable -->
+                                <EditText
+                                    android:id="@+id/etEventCategory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Все категории"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:background="@android:color/transparent"
+                                    android:enabled="false"
+                                    android:inputType="text"
+                                    android:hint="Категория участников"
+                                    android:visibility="gone" />
+
+                                <!-- Event Category - Display only -->
+                                <TextView
+                                    android:id="@+id/tvEventCategory"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Все категории"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Start Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_calendar"
+                                app:tint="@color/primary_color"
+                                android:layout_marginEnd="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Дата и время начала"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvStartDateTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="01 января 2024 в 10:00"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- End Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_calendar"
+                                app:tint="@color/secondary_text"
+                                android:layout_marginEnd="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Дата и время окончания"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/secondary_text" />
+
+                                <TextView
+                                    android:id="@+id/tvEndDateTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="01 января 2024 в 18:00"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Address -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_address"
+                                app:tint="@color/primary_color"
+                                android:layout_marginEnd="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Адрес проведения"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/secondary_text" />
+
+                                <!-- Event Address - Editable -->
+                                <EditText
+                                    android:id="@+id/etEventAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Адрес события"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:background="@android:color/transparent"
+                                    android:enabled="false"
+                                    android:inputType="text"
+                                    android:hint="Адрес проведения"
+                                    android:visibility="gone" />
+
+                                <!-- Event Address - Display only -->
+                                <TextView
+                                    android:id="@+id/tvEventAddress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Адрес события"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/primary_text"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Participants Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Участники"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_color"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_people"
+                                app:tint="@color/primary_color"
+                                android:layout_marginEnd="12dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Количество участников"
+                                android:textSize="14sp"
+                                android:textColor="@color/secondary_text" />
+
+                            <TextView
+                                android:id="@+id/tvParticipantsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0/20"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progressParticipants"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="8dp"
+                            android:progressTint="@color/primary_color"
+                            android:progressBackgroundTint="@color/light_gray"
+                            android:progress="0"
+                            android:max="100" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Join Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnJoinEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="80dp"
+                    android:text="ПРОСМОТРЕТЬ СПИСОК УЧАСТНИКОВ"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_person_add"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp" />
+            </LinearLayout>
+            <!-- Завершить событие и выбрать Excel -->
+            <LinearLayout
+                android:id="@+id/layoutCompleteEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="80dp"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelectExcel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ВЫБРАТЬ EXCEL ФАЙЛ"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/warning_color"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCompleteEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ЗАВЕРШИТЬ СОБЫТИЕ"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/success_color"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Floating Action Button for Edit -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/white"
+            app:backgroundTint="@color/primary_color"
+            android:contentDescription="Редактировать событие" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
